@@ -190,7 +190,7 @@ def Main():
         if ircmsg.find ("!lang sh") != -1:
             sendmsg(channel, "sh is Serbo-Croatian! \n")
         if ircmsg.find ("!lang no") != -1:
-            sendmsg(channel, "no is Norwegian (Bokmål)! \n")
+            sendmsg(channel, "no is Norwegian! \n")
         if ircmsg.find ("!lang ar") != -1:
             sendmsg(channel, "ar is Arabic! \n")
         if ircmsg.find ("!lang fi") != -1:
@@ -244,7 +244,7 @@ def Main():
         if ircmsg.find ("!lang nn") != -1:
             sendmsg(channel, "nn is Norwegian (Nynorsk)! \n")
         if ircmsg.find ("!lang vo") != -1:
-            sendmsg(channel, "vo is Volapük! \n")
+            sendmsg(channel, "vo is Volapuk! \n")
         if ircmsg.find ("!lang la") != -1:
             sendmsg(channel, "la is Latin! \n")
         if ircmsg.find ("!lang simple") != -1:
@@ -290,7 +290,7 @@ def Main():
         if ircmsg.find ("!lang te") != -1:
             sendmsg(channel, "te is Telugu! \n")
         if ircmsg.find ("!lang be-x-old") != -1:
-            sendmsg(channel, "be-x-old is Belarusian (Taraškievica)! \n")
+            sendmsg(channel, "be-x-old is Belarusian (Taraskievica)! \n")
         if ircmsg.find ("!lang br") != -1:
             sendmsg(channel, "br is Breton! \n")
         if ircmsg.find ("!lang ht") != -1:
@@ -454,7 +454,7 @@ def Main():
         if ircmsg.find ("!lang bh") != -1:
             sendmsg(channel, "bh is Bihari! \n")
         if ircmsg.find ("!lang fiu-vro") != -1:
-            sendmsg(channel, "fiu-vro is Võro! \n")
+            sendmsg(channel, "fiu-vro is Voro! \n")
         if ircmsg.find ("!lang xmf") != -1:
             sendmsg(channel, "xmf is Mingrelian! \n")
         if ircmsg.find ("!lang co") != -1:
@@ -556,7 +556,7 @@ def Main():
         if ircmsg.find ("!lang nv") != -1:
             sendmsg(channel, "nv is Navajo! \n")
         if ircmsg.find ("!lang frp") != -1:
-            sendmsg(channel, "frp is Franco-Provençal! \n")
+            sendmsg(channel, "frp is Franco-Provencal! \n")
         if ircmsg.find ("!lang sn") != -1:
             sendmsg(channel, "sn is Shona! \n")
         if ircmsg.find ("!lang kab") != -1:
