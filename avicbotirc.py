@@ -5,7 +5,7 @@
 # Revision: see git
 
 # Import libraries
-import re, socket, os
+import re, socket, os, time
 
 #Definitions
 zero      = 0                   # Zero
@@ -25,7 +25,7 @@ true      = 1                   # Boolean True
 # realname = Bot's "real name"
 
 botnick    = "AvicBot"
-bufsize    = 2048
+bufsize    = 10240
 channel    = "##Avic,#cvn-sw"
 port       = 6667
 server     = "chat.freenode.net"
@@ -87,7 +87,8 @@ def Main():
         ircmsg = ircmsg.strip ('\n\r')
 
         print ircmsg            # Echo input
-
+        time.sleep(0.1)
+        
         m1 = re.match (pattern1, ircmsg, re.I)
         m2 = re.match (pattern2, ircmsg, re.I)
         if ((m1 == None) and (m2 != None)): m1 = m2
@@ -98,6 +99,7 @@ def Main():
                                 # Print a reply
             if (word in Replies):
                 sendmsg (channel, Replies [word])
+                time.sleep(0.1)
 
         if ircmsg.find ("PING :") != -1:
             ping()
@@ -105,7 +107,9 @@ def Main():
 #  !die command to part channel
         if ircmsg.find(":!die "+botnick) != -1: 
             sendmsg(channel, "Do you wanna build a snowman? \n")
+            time.sleep(0.1)
             sendmsg(channel, "It doesn't have to be a snowman. \n")
+            time.sleep(0.1)
             sendmsg(channel, "Ok, Bye :( \n")
             sendmsg(master, "I have to leave now :( \n")
             break
@@ -140,14 +144,19 @@ def Main():
 # !sing parameter
         if ircmsg.find ("!sing") != -1:
             sendmsg (channel, "Daisy, Daisy, Give me your answer, do.\n")
+            time.sleep(0.1)
             sendmsg (channel, "I'm half crazy all for the love of you.\n")
 
 # !commands parameter
         if ircmsg.find ("!commands") != -1:
             sendmsg (channel, "Commands:\n")
+            time.sleep(0.1)
             sendmsg (channel, "!say: Say stuff, !lang ISO code does lookup\n")
+            time.sleep(0.1)
             sendmsg (channel, "!cauth: give you centralauth page for a user\n")
+            time.sleep(0.1)
             sendmsg (channel, "!guc: gives Global User Contribs page \n")
+            time.sleep(0.1)
             sendmsg (channel, "!die: Makes me leave :(\n")
 
 # Languages
