@@ -5,7 +5,7 @@
 # Revision: see git
 
 # Import libraries
-import re, socket, os
+import re, socket, os, time
 
 #Definitions
 zero      = 0                   # Zero
@@ -25,7 +25,7 @@ true      = 1                   # Boolean True
 # realname = Bot's "real name"
 
 botnick    = "AvicBot"
-bufsize    = 2048
+bufsize    = 10240
 channel    = "#noobenheim"
 port       = 6667
 server     = "irc.twitch.tv"
@@ -87,6 +87,7 @@ def Main():
         ircmsg = ircmsg.strip ('\n\r')
 
         print ircmsg            # Echo input
+        time.sleep(0.5)
 
         m1 = re.match (pattern1, ircmsg, re.I)
         m2 = re.match (pattern2, ircmsg, re.I)
@@ -105,7 +106,9 @@ def Main():
 #  !die command to part channel
         if ircmsg.find(":!die "+botnick) != -1: 
             sendmsg(channel, "Do you wanna build a snowman? \n")
+            time.sleep(1)
             sendmsg(channel, "It doesn't have to be a snowman. \n")
+            time.sleep(1)
             sendmsg(channel, "Ok, Bye :( \n")
             sendmsg(master, "I have to leave now :( \n")
             break
@@ -120,15 +123,18 @@ def Main():
 # Note that twitch seems to ignore multiple lines - need to add a delay here
         if ircmsg.find ("!sing") != -1:
             sendmsg (channel, "Daisy, Daisy, Give me your answer, do.\n")
+            time.sleep(1)
             sendmsg (channel, "I'm half crazy all for the love of you.\n")
 
 # !commands parameter
 # Note that twitch seems to ignore multiple lines - need to add a delay here
         if ircmsg.find ("!commands") != -1:
             sendmsg (channel, "Commands:\n")
-            sendmsg (channel, "!say: Say stuff, !lang ISO code does lookup\n")
-            sendmsg (channel, "!cauth: give you centralauth page for a user\n")
-            sendmsg (channel, "!guc: gives Global User Contribs page \n")
+            time.sleep(1)
+            sendmsg (channel, "!say: I echo back whatever you say\n")
+            time.sleep(1)
+            sendmsg (channel, "!sing: I sing, duh\n")
+            time.sleep(1)
             sendmsg (channel, "!die: Makes me leave :(\n")
 
 
