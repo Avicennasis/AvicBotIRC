@@ -106,9 +106,9 @@ def Main():
 #  !die command to part channel
         if ircmsg.find(":!die "+botnick) != -1: 
             sendmsg(channel, "Do you wanna build a snowman? \n")
-            time.sleep(1)
+            time.sleep(2)
             sendmsg(channel, "It doesn't have to be a snowman. \n")
-            time.sleep(1)
+            time.sleep(2)
             sendmsg(channel, "Ok, Bye :( \n")
             sendmsg(master, "I have to leave now :( \n")
             break
@@ -123,18 +123,18 @@ def Main():
 # Note that twitch seems to ignore multiple lines - need to add a delay here
         if ircmsg.find ("!sing") != -1:
             sendmsg (channel, "Daisy, Daisy, Give me your answer, do.\n")
-            time.sleep(1)
+            time.sleep(2)
             sendmsg (channel, "I'm half crazy all for the love of you.\n")
 
 # !commands parameter
 # Note that twitch seems to ignore multiple lines - need to add a delay here
         if ircmsg.find ("!commands") != -1:
             sendmsg (channel, "Commands:\n")
-            time.sleep(1)
+            time.sleep(2)
             sendmsg (channel, "!say: I echo back whatever you say\n")
-            time.sleep(1)
+            time.sleep(2)
             sendmsg (channel, "!sing: I sing, duh\n")
-            time.sleep(1)
+            time.sleep(2)
             sendmsg (channel, "!die: Makes me leave :(\n")
 
 
