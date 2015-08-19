@@ -87,7 +87,7 @@ def Main():
         ircmsg = ircmsg.strip ('\n\r')
 
         print ircmsg            # Echo input
-        time.sleep(0.1)
+        time.sleep(0.2)
         
         m1 = re.match (pattern1, ircmsg, re.I)
         m2 = re.match (pattern2, ircmsg, re.I)
