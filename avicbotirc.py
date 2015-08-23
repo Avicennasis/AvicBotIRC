@@ -147,6 +147,11 @@ def Main():
             time.sleep(0.1)
             sendmsg (channel, "I'm half crazy all for the love of you.\n")
 
+# !random parameter
+# This was chosen by a fair roll of a d20.
+        if ircmsg.find ("!random") != -1:
+            sendmsg (channel, "7.\n")
+
 # !commands parameter
         if ircmsg.find ("!commands") != -1:
             sendmsg (channel, "Commands:\n")
