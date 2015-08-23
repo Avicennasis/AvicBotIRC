@@ -126,6 +126,11 @@ def Main():
             time.sleep(2)
             sendmsg (channel, "I'm half crazy all for the love of you.\n")
 
+# !random parameter
+# This was chosen by a fair roll of a d20.
+        if ircmsg.find ("!random") != -1:
+            sendmsg (channel, "7.\n")
+
 # !commands parameter
 # Note that twitch seems to ignore multiple lines - need to add a delay here
         if ircmsg.find ("!commands") != -1:
