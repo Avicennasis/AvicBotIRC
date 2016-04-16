@@ -41,6 +41,7 @@ Replies ['sayonara' ] = "I'll miss you"
 Replies ['scram'    ] = "No, you"
 Replies ['shout'    ] = "NO I WON'T"
 Replies ['dance'    ] = "*" + botnick + " dances*"
+Replies ['hi'       ] = "Hi"
 Replies ['hello'    ] = "Hi"
 Replies ['howdy'    ] = "Hi"
 Replies ['time'     ] = "It is TIME for a RHYME"
@@ -104,7 +105,7 @@ def Main():
             ping()
 
 #  !die command to part channel
-        if ircmsg.find(":!die "+botnick) != -1: 
+        if ircmsg.find("!die "+botnick) != -1:
             sendmsg(channel, "Do you wanna build a snowman? \n")
             time.sleep(2)
             sendmsg(channel, "It doesn't have to be a snowman. \n")
@@ -113,8 +114,8 @@ def Main():
             sendmsg(master, "I have to leave now :( \n")
             break
 
-# Say command
-        if ircmsg.find (":!say ") != -1:
+# !say command
+        if ircmsg.find ("!say ") != -1:
             say_split = ircmsg.split ("!say ")
             sendmsg (channel, say_split [1])
             sendmsg (master, "Message sent: " + say_split [1])
@@ -126,7 +127,7 @@ def Main():
             time.sleep(2)
             sendmsg (channel, "I'm half crazy all for the love of you.\n")
 
-# !random parameter
+# !random number parameter
 # This was chosen by a fair roll of a d20.
         if ircmsg.find ("!random") != -1:
             sendmsg (channel, "7.\n")
@@ -136,11 +137,44 @@ def Main():
         if ircmsg.find ("!commands") != -1:
             sendmsg (channel, "Commands:\n")
             time.sleep(2)
-            sendmsg (channel, "!say: I echo back whatever you say\n")
+            sendmsg (channel, "!say: I echo back whatever you say.\n")
             time.sleep(2)
-            sendmsg (channel, "!sing: I sing, duh\n")
+            sendmsg (channel, "!sing: I sing, duh.\n")
+            time.sleep(2)
+            sendmsg (channel, "!random: Returns a random number.\n")
             time.sleep(2)
             sendmsg (channel, "!die: Makes me leave :(\n")
+
+# !xkcd command
+        if ircmsg.find ("!xkcd ") != -1:
+            say_split = ircmsg.split ("!xkcd ")
+            sendmsg (channel, "http://xkcd.com/" + say_split [1])
+
+# !beer command
+        if ircmsg.find ("!beer ") != -1:
+            say_split = ircmsg.split ("!beer ")
+            sendmsg (channel, "*Gives a beer to " + say_split [1] + "!* Drink up!")
+
+# funny response parameters
+        if ircmsg.find ("what is the matrix?") != -1:
+            sendmsg (channel, "No-one can be told what the matrix is. You have to see it for yourself.\n")
+        if ircmsg.find ("where are we?") != -1:
+            sendmsg (channel, "Last I checked, we were in " + channel + ", sooo... \n")
+        if ircmsg.find ("boobs") != -1:
+            sendmsg (channel, "BOOBS!\n")
+        if ircmsg.find ("boobies") != -1:
+            sendmsg (channel, "BOOBIES!\n")
+        if ircmsg.find ("cake") != -1:
+            sendmsg (channel, "The cake is a lie!\n")
+        if ircmsg.find ("love") != -1:
+            sendmsg (channel, "What is love? Baby, don't hurt me.\n")
+
+
+
+
+
+
+
 
 
 # Main routine
