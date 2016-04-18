@@ -158,7 +158,6 @@ def Main():
             say_split = ircmsg.split ("!beer ")
             sendmsg (channel, "*Gives a beer to " + say_split [1] + "!* Drink up!")
 
-
 # funny response parameters
         if ircmsg.find ("what is the matrix?") != -1:
             sendmsg (channel, "No-one can be told what the matrix is. You have to see it for yourself.\n")
@@ -172,8 +171,6 @@ def Main():
             sendmsg (channel, "The cake is a lie!\n")
         if ircmsg.find ("love") != -1:
             sendmsg (channel, "What is love? Baby, don't hurt me.\n")
-
-
 
 
 
