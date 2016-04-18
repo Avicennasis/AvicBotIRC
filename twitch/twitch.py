@@ -1,11 +1,13 @@
 #!/usr/bin/env python
-# AvicBotIRC.py 
+# AvicBotIRC.py
 # Authors: Avicennasis
 # License:  MIT license Copyright (c) 2015 Avicennasis
 # Revision: see git
 
 # Import libraries
+from twitchconfig import *
 import re, socket, os, time
+
 
 #Definitions
 zero      = 0                   # Zero
@@ -21,7 +23,7 @@ true      = 1                   # Boolean True
 # port     = port number
 # server   = server hostname
 # master   = Owner of the bot
-# uname    = Bot username 
+# uname    = Bot username
 # realname = Bot's "real name"
 
 botnick    = "AvicBot"
@@ -46,6 +48,7 @@ Replies ['hello'    ] = "Hi"
 Replies ['howdy'    ] = "Hi"
 Replies ['time'     ] = "It is TIME for a RHYME"
 Replies ['master'   ] = master + " is my master"
+
 
 #ping
 def ping():
@@ -76,7 +79,7 @@ def Main():
 
     ircsock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
     ircsock.connect ((server, port))
-    ircsock.send ("PASS oauth:TOKEN \n")
+    ircsock.send ("PASS {}\r\n".format(PASS).encode("utf-8"))
     ircsock.send ("USER " + uname + " 2 3 " + realname + "\n")
     ircsock.send ("NICK "+ botnick + "\n")
     JoinChan (channel)          # Join channel
@@ -154,6 +157,7 @@ def Main():
         if ircmsg.find ("!beer ") != -1:
             say_split = ircmsg.split ("!beer ")
             sendmsg (channel, "*Gives a beer to " + say_split [1] + "!* Drink up!")
+
 
 # funny response parameters
         if ircmsg.find ("what is the matrix?") != -1:
