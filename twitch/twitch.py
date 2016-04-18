@@ -171,6 +171,8 @@ def Main():
             sendmsg (channel, "The cake is a lie!\n")
         if ircmsg.find ("love") != -1:
             sendmsg (channel, "What is love? Baby, don't hurt me.\n")
+        if ircmsg.find ("shit") != -1:
+            sendmsg (channel, "*poop\n")
 
 
 
