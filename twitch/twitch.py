@@ -114,14 +114,14 @@ def Main():
             sendmsg(channel, "It doesn't have to be a snowman. \n")
             time.sleep(2)
             sendmsg(channel, "Ok, Bye :( \n")
-            sendmsg(master, "I have to leave now :( \n")
+#            sendmsg(master, "I have to leave now :( \n")
             break
 
 # !say command
         if ircmsg.find ("!say ") != -1:
             say_split = ircmsg.split ("!say ")
             sendmsg (channel, say_split [1])
-            sendmsg (master, "Message sent: " + say_split [1])
+#            sendmsg (master, "Message sent: " + say_split [1])
 
 # !sing parameter
 # Note that twitch seems to ignore multiple lines - need to add a delay here
@@ -172,7 +172,7 @@ def Main():
         if ircmsg.find ("love") != -1:
             sendmsg (channel, "What is love? Baby, don't hurt me.\n")
         if ircmsg.find ("shit") != -1:
-            sendmsg (channel, "*poop\n")
+            sendmsg (channel, "You mean poop.\n")
 
 
 
