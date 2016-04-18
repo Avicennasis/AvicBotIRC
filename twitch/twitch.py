@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# AvicBotIRC.py
+# twitch.py
 # Authors: Avicennasis
 # License:  MIT license Copyright (c) 2015 Avicennasis
 # Revision: see git
